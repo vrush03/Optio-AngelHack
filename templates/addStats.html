@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Localize</title>
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
+    <script src="../static/js/jquery-2.2.1.min.js"></script>
+<!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <!-- MDB core CSS -->
+    <link href="http://mdbootstrap.com/mdbcdn/mdb.min.css" rel="stylesheet">
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="http://mdbootstrap.com/mdbcdn/mdb.min.js"></script>
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+    <!-- <link href="../static/addStats.css" rel="stylesheet"> -->
+
+</head>
+
+<body>
+   <style >
+            body {
+                background-image: url("../static/background.jpg");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                font-family: 'Raleway';
+            }
+    </style>
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="#">Add Locale Details</a>
+                    </li>
+                    <li role="presentation"><a href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class = "heading" style="color: #000000; margin-top:15px;">Localize</h3>
+        </div>
+        <section>
+            <form class="form-horizontal" method="post" action="/addStats" >
+
+              <div class="form-group">
+                  <label class="col-md-4 control-label" for="txtTitle" style="color: #ffffff">Your Locale</label>
+                  <div class="col-md-4">
+                      <input id="txtTitle" name="inputLocale" type="text" placeholder="" class="form-control input-md" required="true" style="color:white;">
+                  </div>
+              </div>
+                <fieldset>
+
+                    <!-- Form Name -->
+                    <legend>On a Scale of 1 to 10, how will you rate the following aspects? (10 being excellent)</legend>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="txtTitle" style="color: #ffffff">Water Supply</label>
+                        <div class="col-md-4">
+                            <input id="txtTitle" name="inputWater" type="number" value="5" min="0" max="10" step="1" placeholder="" class="form-control input-md" required="true" style="color:white;">
+                        </div>
+                    </div>
+
+
+                        <!-- <div class="slider" style="width:300px; margin-left: 200px">
+                            <ul id = "list">
+                                <li><input type = "range" min="1" max="10" steps="1" value = "5" onchange="rangevalue.value=value" name="k"></input></li>
+                                <li><output style ="margin-left:20px">5</output></li>
+                            </ul>
+                        </div>  -->
+
+                    <!-- Text input-->
+                    <div class="form-group" >
+                        <label class="col-md-4 control-label" for="txtTitle" style="color:#ffffff">Electricity</label>
+                        <div class="col-md-4">
+                            <input id="txtTitle" name="inputElectricity" type="number" value="5" min="0" max="10" step="1" placeholder="" class="form-control input-md" required="true" style="color:white;">
+                        </div>
+                    </div>
+
+                    <!-- Textarea -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="txtPost" style="color: #ffffff">Network Availability</label>
+                        <div class="col-md-4">
+                            <input id="txtTitle" name="inputNetworkAvailability" type="number" value="5" min="0" max="10" step="1" placeholder="" class="form-control input-md" required="true" style="color:white;">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="txtTitle" style="color: #ffffff">Cleanliness</label>
+                        <div class="col-md-4">
+                            <input id="txtTitle" name="inputCleanliness" type="number" value="5" min="0" max="10" step="1" placeholder="" class="form-control input-md" required="true" style="color:white;">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="txtTitle" style="color: #ffffff">Green Space</label>
+                        <div class="col-md-4">
+                            <input id="txtTitle" name="inputGreenSpace" type="number" value="5" min="0" max="10" step="1" placeholder="" class="form-control input-md" required="true" style="color:white;">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="txtTitle" style="color: #ffffff">Local Entertainment</label>
+                        <div class="col-md-4">
+                            <input id="txtTitle" name="inputLocalEntertainment" type="number" value="5" min="0" max="10" step="1" placeholder="" class="form-control input-md" required="true" style="color:white;">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="txtTitle" style="color: #ffffff">Nightlife</label>
+                        <div class="col-md-4">
+                            <input id="txtTitle" name="inputNightlife" type="number" value="5" min="0" max="10" step="1" placeholder="" class="form-control input-md" required="true" style="color:white;">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="txtTitle" style="color: #ffffff">Availability of Repairmen</label>
+                        <div class="col-md-4">
+                            <input id="txtTitle" name="inputRepairmenAvailability" type="number" value="5" min="0" max="10" step="1" placeholder="" class="form-control input-md" required="true" style="color:white;">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="txtTitle" style="color: #ffffff">Education</label>
+                        <div class="col-md-4">
+                            <input id="txtTitle" name="inputeducation" type="number" value="5" min="0" max="10" step="1" placeholder="" class="form-control input-md" required="true" style="color:white;">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="txtTitle" style="color: #ffffff">Neighbourhood</label>
+                        <div class="col-md-4">
+                            <input id="txtTitle" name="inputNeighbourhood" type="number" value="5" min="0" max="10" step="1" placeholder="" class="form-control input-md" required="true" style="color:white;">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="txtTitle" style="color: #ffffff">Add a Review</label>
+                        <div class="col-md-4">
+                            <input id="txtTitle" name="inputReview" type="text"  min="0" max="10" step="1" placeholder="Add a review" class="form-control input-md" required="true" style="color:white;">
+                        </div>
+                    </div>
+
+
+                </fieldset>
+            <button id = "btnID" type="submit" class="waves-effect waves-light btn" href ="/addStatsSecurity" />Next</a>
+            </form>
+
+        </section>
+        <footer class="footer">
+            <p>&copy; Optio</p>
+        </footer>
+
+    </div>
+</body>
+
+</html>
+
