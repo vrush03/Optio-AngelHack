@@ -29,12 +29,12 @@ def main():
     else:
         return render_template('home.html')
 # route to signup.html
-@app.route('/showSignUp')
+@app.route('/signup')
 def showSignUp():
     return render_template('signup.html')
 
 # interact with MySQL for sign up
-@app.route('/signUp',methods=['POST'])
+@app.route('/signup',methods=['POST'])
 def signUp():
     try:
         _name = request.form['inputName']
