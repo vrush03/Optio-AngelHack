@@ -29,12 +29,12 @@ def main():
     else:
         return render_template('home.html')
 # route to signup.html
-@app.route('/showSignUp')
+@app.route('/signup')
 def showSignUp():
     return render_template('signup.html')
 
 # interact with MySQL for sign up
-@app.route('/signUp',methods=['POST'])
+@app.route('/signup',methods=['POST'])
 def signUp():
     try:
         _name = request.form['inputName']
@@ -112,36 +112,36 @@ def demo():
 ######################################################################################33
 #This is the review form implementation
 
-@app.route('/addStats')
-def displayForm():
-    return render_template('addStats.html')
+# @app.route('/addStats')
+# def displayForm():
+#     return render_template('addStats.html')
 
-@app.route('/addStats', methods=['POST'])
-def takeData():
-    locale=str(request.form['inputLocale'])
-    water=int(request.form['inputWater'])
-    electricity=int(request.form['inputElectricity'])
-    network=int(request.form['inputNetworkAvailability'])
-    cleanliness=int(request.form['inputCleanliness'])
-    green=int(request.form['inputGreenSpace'])
-    life=int(request.form['inputNightlife'])
-    rmen=int(request.form['inputRepairmenAvailability'])
-    edu=int(request.form['inputeducation'])
-    nhood=int(request.form['inputNeighbourhood'])
-    lent=int(request.form['inputLocalEntertainment'])
-    rev=str(request.form['inputReview'])
-    uid=int(session.get('user'))
-    conn=mysql.connect()
-    cur=conn.cursor()
-    cur.execute("Select Loc_id from Coordinates where Loc_name=%s",(locale))
-    lid=int(cur.fetchone()[0])
-    cur.execute("Insert into Review (UserId,Loc_id,review_text) values(%s,%s,%s)",(uid,lid,rev))
-    conn.commit()
-    cur.callproc('sp_addStats',(uid,lid,water,electricity,network,cleanliness, green, lent, life, rmen, edu, nhood))
-    conn.commit()
-    cur.close()
-    conn.close()
-    return render_template('home.html')
+# @app.route('/addStats', methods=['POST'])
+# def takeData():
+#     locale=str(request.form['inputLocale'])
+#     water=int(request.form['inputWater'])
+#     electricity=int(request.form['inputElectricity'])
+#     network=int(request.form['inputNetworkAvailability'])
+#     cleanliness=int(request.form['inputCleanliness'])
+#     green=int(request.form['inputGreenSpace'])
+#     life=int(request.form['inputNightlife'])
+#     rmen=int(request.form['inputRepairmenAvailability'])
+#     edu=int(request.form['inputeducation'])
+#     nhood=int(request.form['inputNeighbourhood'])
+#     lent=int(request.form['inputLocalEntertainment'])
+#     rev=str(request.form['inputReview'])
+#     uid=int(session.get('user'))
+#     conn=mysql.connect()
+#     cur=conn.cursor()
+#     cur.execute("Select Loc_id from Coordinates where Loc_name=%s",(locale))
+#     lid=int(cur.fetchone()[0])
+#     cur.execute("Insert into Review (UserId,Loc_id,review_text) values(%s,%s,%s)",(uid,lid,rev))
+#     conn.commit()
+#     cur.callproc('sp_addStats',(uid,lid,water,electricity,network,cleanliness, green, lent, life, rmen, edu, nhood))
+#     conn.commit()
+#     cur.close()
+#     conn.close()
+#     return render_template('home.html')
 
 ######################################################################################
 
